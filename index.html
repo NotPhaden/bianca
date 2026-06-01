@@ -1,194 +1,504 @@
 <head>
-<link rel="icon" type="image/png" href="favicon.png">
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Bianca Community Hub</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<title>BIANCA  ONLINE</title>
 
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+html,body{
+    width:100%;
+    min-height:100vh;
+    overflow-x:hidden;
+    background:#050505;
 }
 
 body{
-font-family:'Inter',sans-serif;
-min-height:100vh;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-padding:20px;
-overflow:hidden;
-position:relative;
-color:white;
-
-background:
-linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.88)),
-url("background.png");
-
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
+    color:white;
+    background:
+    linear-gradient(rgba(0,0,0,.18),rgba(0,0,0,.52)),
+    url("main-bg-pc.png");
+    background-size:cover;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
 }
 
-body::before{
-content:"";
-position:fixed;
-inset:0;
-
-background:
-radial-gradient(circle at top right, rgba(168,85,247,0.28), transparent 30%),
-radial-gradient(circle at bottom left, rgba(147,51,234,0.22), transparent 35%);
-
-filter:blur(90px);
-pointer-events:none;
+.main{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:30px 15px;
 }
 
-.container{
-width:100%;
-max-width:500px;
-
-padding:32px;
-border-radius:30px;
-
-background:rgba(10,5,20,0.62);
-backdrop-filter:blur(18px);
-
-border:1px solid rgba(168,85,247,0.18);
-
-box-shadow:
-0 0 40px rgba(168,85,247,0.18),
-0 0 100px rgba(168,85,247,0.08);
+.card{
+    position:relative;
+    width:100%;
+    max-width:520px;
+    padding:78px 42px 34px;
+    border-radius:28px;
+    text-align:center;
+    background:
+        radial-gradient(circle at top, rgba(214,168,79,.10), transparent 34%),
+        linear-gradient(180deg, rgba(10,12,14,.78), rgba(0,0,0,.58));
+    border:1px solid hwb(310 1% 77% / 0.55);
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,.06) inset,
+        0 0 36px #4e003038,
+        0 25px 80px rgba(0,0,0,.80);
+    backdrop-filter:blur(7px);
+    -webkit-backdrop-filter:blur(7px);
+    overflow:visible;
 }
+
+.card::before,
+.card::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    width:58%;
+    height:1px;
+    background:linear-gradient(90deg, transparent, rgba(73, 1, 61, 0.95), transparent);
+    box-shadow:0 0 12px rgba(49, 0, 39, 0.85);
+}
+
+.card::before{ top:-1px; }
+.card::after{ bottom:-1px; }
 
 .logo{
-text-align:center;
-margin-bottom:24px;
+    position:absolute;
+    top:-48px;
+    left:50%;
+    transform:translateX(-50%);
+    width:112px;
+    height:112px;
+    margin:0;
+    border-radius:50%;
+    overflow:hidden;
+    border:3px solid #35013211;
+    background:#050505;
+    box-shadow:
+        0 0 0 5px rgba(0,0,0,.62),
+        0 0 24px rgba(80, 1, 67, 0.85),
+        0 0 50px #a855f7;
+}
+
+.logo::before{
+    content:"♛";
+    position:absolute;
+    top:-17px;
+    left:50%;
+    transform:translateX(-50%);
+    color:#a855f7;
+    font-size:20px;
+    text-shadow:0 0 10px #a855f7;
+    z-index:2;
 }
 
 .logo img{
-width:130px;
-border-radius:22px;
-
-box-shadow:
-0 0 30px rgba(168,85,247,0.45);
-
-transition:0.3s;
-}
-
-.logo img:hover{
-transform:scale(1.05);
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
 h1{
-text-align:center;
-font-size:2rem;
-font-weight:800;
-margin-bottom:28px;
+    font-size:56px;
+    line-height:.95;
+    letter-spacing:7px;
+    margin-bottom:14px;
+    color:white;
+    text-shadow:
+        0 2px 0 rgba(0,0,0,.75),
+        0 0 22px rgba(0,0,0,.95);
+}
 
-background:linear-gradient(
-90deg,
-#f0abfc,
-#c084fc,
-#9333ea
-);
+h1 span{
+    display:block;
+    margin-top:6px;
+    font-size:38px;
+    color:#a855f7;
+    letter-spacing:12px;
+    text-shadow:
+        0 0 16px #a855f7,
+        0 2px 0 rgba(0,0,0,.85);
+}
 
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+.subtitle{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    color:#a855f7;
+    font-size:15px;
+    font-weight:bold;
+    letter-spacing:7px;
+    text-transform:uppercase;
+    margin-bottom:28px;
+    text-shadow:0 0 10px rgba(0,0,0,.95);
+}
+
+.subtitle::before,
+.subtitle::after{
+    content:"";
+    width:58px;
+    height:1px;
+    background:linear-gradient(90deg, transparent, #a855f7);
+}
+
+.subtitle::after{
+    background:linear-gradient(90deg, #a855f7, transparent);
 }
 
 .info-box{
-padding:16px 18px;
-margin-bottom:20px;
-
-border-radius:18px;
-
-background:rgba(255,255,255,0.04);
-
-border:1px solid rgba(168,85,247,0.16);
-
-color:#f5d0fe;
-font-weight:600;
-font-size:1rem;
-
-box-shadow:
-0 0 20px rgba(168,85,247,0.08);
+    margin:18px 0 24px;
+    display:grid;
+    gap:7px;
+    text-align:left;
 }
 
-.link{
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-padding:18px 20px;
-margin-bottom:14px;
-
-border-radius:18px;
-
-text-decoration:none;
-color:#f3e8ff;
-
-font-weight:600;
-
-background:rgba(255,255,255,0.04);
-
-border:1px solid rgba(168,85,247,0.12);
-
-transition:0.25s;
-position:relative;
-overflow:hidden;
+.info-box div{
+    display:grid;
+    grid-template-columns:32px 1fr 1fr;
+    align-items:center;
+    gap:12px;
+    min-height:43px;
+    padding:10px 14px;
+    border-radius:8px;
+    background:linear-gradient(180deg, rgba(255,255,255,.055), rgba(0,0,0,.25));
+    border:1px solid rgba(255,255,255,.13);
+    box-shadow:0 0 14px rgba(0,0,0,.28) inset;
 }
 
-.link::before{
-content:"";
-position:absolute;
-inset:0;
-
-background:linear-gradient(
-90deg,
-rgba(168,85,247,0.18),
-transparent
-);
-
-opacity:0;
-transition:0.25s;
+.info-box div::before{
+    font-size:20px;
+    color:#a855f7;
+    text-align:center;
+    filter:drop-shadow(0 0 5px #a855f7);
 }
 
-.link:hover{
-transform:translateY(-2px) scale(1.01);
+.info-box div:nth-child(1)::before{ content:"▦"; }
+.info-box div:nth-child(2)::before{ content:"▣"; }
+.info-box div:nth-child(3)::before{ content:"◆"; }
+.info-box div:nth-child(4)::before{ content:"♛"; }
 
-border-color:rgba(168,85,247,0.4);
-
-box-shadow:
-0 0 25px rgba(168,85,247,0.18);
+.info-box strong{
+    color:#a855f7;
+    font-size:14px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    text-shadow:0 0 8px #a855f7;
 }
 
-.link:hover::before{
-opacity:1;
+.info-box span{
+    color:#ffffff;
+    font-size:15px;
+    text-align:right;
+    text-shadow:0 0 8px rgba(0,0,0,.95);
 }
 
-.icon{
-margin-right:8px;
+.section-title{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:13px;
+    margin:20px 0 16px;
+    font-size:14px;
+    letter-spacing:4px;
+    color:#f1f1f1;
+    text-transform:uppercase;
+    text-shadow:0 0 10px rgba(0,0,0,.95);
 }
 
-.arrow{
-opacity:0.6;
+.section-title::before,
+.section-title::after{
+    content:"";
+    width:34px;
+    height:1px;
+    background:#a855f7;
+    box-shadow:0 0 9px #a855f7;
 }
 
-footer{
-text-align:center;
-margin-top:24px;
+.links-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+}
 
-font-size:0.8rem;
-color:#d8b4fe;
-opacity:0.75;
+.btn{
+    position:relative;
+    min-height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    gap:13px;
+    padding:14px 16px;
+    border-radius:9px;
+    text-decoration:none;
+    color:white;
+    background:linear-gradient(180deg, rgba(255,255,255,.055), rgba(0,0,0,.30));
+    border:1px solid rgba(255,255,255,.16);
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,.04) inset,
+        0 12px 22px rgba(0,0,0,.34);
+    overflow:hidden;
+    transition:.25s ease;
+}
+
+.btn::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,.09), transparent);
+    transform:translateX(-120%);
+    transition:.45s ease;
+}
+
+.btn:hover{
+    transform:translateY(-3px) scale(1.015);
+}
+
+.btn:hover::after{
+    transform:translateX(120%);
+}
+
+.btn img{
+    width:34px;
+    height:34px;
+    object-fit:contain;
+    flex:0 0 auto;
+    filter:drop-shadow(0 0 8px rgba(255,255,255,.20));
+}
+
+.btn span{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    line-height:1.05;
+    font-size:20px;
+    font-weight:900;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+.btn small{
+    margin-top:5px;
+    font-size:9px;
+    letter-spacing:1px;
+    color:rgba(255,255,255,.72);
+    font-weight:700;
+}
+
+.btn.discord{ border-color:rgba(110,120,255,.72); box-shadow:0 0 18px rgba(88,101,242,.23); }
+.btn.tiktok{ border-color:rgba(0,245,255,.68); box-shadow:0 0 18px rgba(0,245,255,.18); }
+.btn.youtube{ border-color:rgba(255,55,55,.68); box-shadow:0 0 18px rgba(255,55,55,.18); }
+.btn.donate{ border-color:rgba(214,168,79,.72); box-shadow:0 0 18px rgba(214,168,79,.20); }
+
+.footer{
+    margin-top:26px;
+    color:#ddd;
+    font-size:13px;
+    text-shadow:0 0 10px rgba(0,0,0,.9);
+}
+
+.footer a{
+    color:#d6a84f;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.25s;
+}
+
+.footer a:hover{
+    color:white;
+    text-shadow:0 0 10px #a855f7;
+}
+
+@media(max-width:900px){
+
+    html,body{
+        width:100%;
+        height:100%;
+        min-height:100svh;
+        overflow:hidden;
+    }
+
+    body{
+        background:
+        linear-gradient(rgba(0,0,0,.10),rgba(0,0,0,.30)),
+        url("main-bg-mobile.png");
+
+        background-size:100% auto;
+        background-position:center top;
+        background-repeat:no-repeat;
+        background-attachment:scroll;
+    }
+
+    .main{
+        min-height:100svh;
+        align-items:flex-start;
+        justify-content:center;
+        padding:24px 8px 0;
+    }
+
+    .card{
+    width:92%;
+    max-width:350px;
+    padding:30px 12px 8px;
+    border-radius:28px;
+
+    transform:scale(1.1);
+    transform-origin:top center;
+    margin-top:0;
+
+    background:
+        radial-gradient(circle at top, rgba(214,168,79,.10), transparent 34%),
+        linear-gradient(180deg, rgba(10,12,14,.78), rgba(0,0,0,.58));
+
+    border:1px solid #a855f7;
+
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,.06) inset,
+        0 0 36px rgba(214,168,79,.22),
+        0 25px 80px rgba(0,0,0,.80);
+
+    backdrop-filter:blur(7px);
+    -webkit-backdrop-filter:blur(7px);
+
+    overflow:visible;
+}
+
+    .logo{
+        width:54px;
+        height:54px;
+        top:-25px;
+        border-width:2px;
+        box-shadow:
+            0 0 0 3px rgba(0,0,0,.55),
+            0 0 14px #a855f7;
+    }
+
+    .logo::before{
+        top:-13px;
+        font-size:15px;
+    }
+
+    h1{
+        font-size:22px;
+        letter-spacing:2px;
+        margin-bottom:5px;
+    }
+
+    h1 span{
+        font-size:14px;
+        letter-spacing:4px;
+        margin-top:2px;
+    }
+
+    .subtitle{
+        font-size:7px;
+        letter-spacing:2px;
+        gap:5px;
+        margin-bottom:8px;
+    }
+
+    .subtitle::before,
+    .subtitle::after{
+        width:18px;
+    }
+
+    .info-box{
+        margin:6px 0 8px;
+        gap:3px;
+    }
+
+    .info-box div{
+        grid-template-columns:16px 1fr 1fr;
+        min-height:24px;
+        gap:5px;
+        padding:4px 7px;
+        border-radius:6px;
+    }
+
+    .info-box div::before{
+        font-size:10px;
+    }
+
+    .info-box strong{
+        font-size:7px;
+        letter-spacing:.3px;
+    }
+
+    .info-box span{
+        font-size:8px;
+    }
+
+    .section-title{
+        font-size:7px;
+        letter-spacing:1px;
+        gap:5px;
+        margin:7px 0 6px;
+        line-height:1.1;
+    }
+
+    .section-title::before,
+    .section-title::after{
+        width:12px;
+    }
+
+    .links-grid{
+        grid-template-columns:1fr 1fr;
+        gap:5px;
+    }
+
+    .btn{
+        min-height:33px;
+        gap:5px;
+        padding:5px 6px;
+        border-radius:6px;
+    }
+
+    .btn img{
+        width:16px;
+        height:16px;
+    }
+
+    .btn span{
+        font-size:8px;
+        letter-spacing:.2px;
+    }
+
+    .btn small{
+        margin-top:1px;
+        font-size:4px;
+        letter-spacing:.2px;
+    }
+
+    .footer{
+        margin-top:6px;
+        font-size:6px;
+    }
+}
+
+@media(max-width:360px){
+
+    .main{
+        padding-top:20px;
+    }
+
+    .card{
+        max-width:330px;
+        transform:scale(.68);
+        transform-origin:top center;
+    }
 }
 
 </style>
@@ -196,42 +506,90 @@ opacity:0.75;
 
 <body>
 
-<div class="container">
+<div class="main">
 
-<div class="logo">
-<img src="logo.png" alt="Bianca Logo">
-</div>
+    <div class="card">
 
-<h1>Bianca Community Hub</h1>
+        <div class="logo">
+            <img src="avatar.png">
+        </div>
 
-<div class="info-box">
-⚡  Referral: <strong>30</strong>
-</div>
+        <h1>BIANCA <span></span></h1>
 
-<a class="link" href="https://discord.com/invite/tvn63tChDA" target="_blank">
-<span><span class="icon">💬</span> Discord</span>
-<span class="arrow">➜</span>
-</a>
+        <div class="subtitle">
+            Official Online Links
+        </div>
 
-<a class="link" href="https://www.instagram.com/rusnaciucbianca/" target="_blank">
-<span><span class="icon">📸</span> Instagram</span>
-<span class="arrow">➜</span>
-</a>
+        <div class="info-box">
 
-<a class="link" href="https://www.tipeeestream.com/biancarusnaciuc/donation" target="_blank">
-<span><span class="icon">💜</span> Sustinere</span>
-<span class="arrow">➜</span>
-</a>
+            <div>
+                <strong>Server:</strong>
+                <span>B-ZONE Romania</span>
+            </div>
 
-<a class="link" href="https://revolut.me/biancarusnaciuc" target="_blank">
-<span><span class="icon">💳</span> Revolut</span>
-<span class="arrow">➜</span>
-</a>
+            <div>
+                <strong>Platformă:</strong>
+                <span>RageMP</span>
+            </div>
 
-<footer>
-© 2025 Bianca
-</footer>
+            <div>
+                <strong>Discount Code:</strong>
+                <span>BIANCA</span>
+            </div>
+
+            <div>
+                <strong>Referral Code:</strong>
+                <span>30</span>
+            </div>
+
+        </div>
+
+        <div class="section-title">
+            Unde o puteți găsi pe BIANCA  online
+        </div>
+
+        <div class="links-grid">
+
+            <a class="btn discord" href="https://discord.com/invite/tvn63tChDA" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png">
+                <span>Discord <small>Join the community</small></span>
+            </a>
+
+            <a class="btn tiktok" href="https://www.tiktok.com/@biancarusnaciuc" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
+                <span>TikTok <small>Follow for more</small></span>
+            </a>
+
+            <a class="btn donate" href="https://www.tipeeestream.com/biancarusnaciuc/donation" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135706.png">
+                <span>Susținere <small>Support BIANCA </small></span>
+            </a>
+
+              <a class="btn revolut" href="https://revolut.me/biancarusnaciuc" target="_blank">
+             <img src="https://cdn-icons-png.flaticon.com/512/825/825454.png">
+              <span>Revolut <small>Support via Revolut</small></span>
+            </a>
+
+            <a class="btn instagram" href="https://www.instagram.com/rusnaciucbianca/" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+         <span>Instagram <small>Follow on IG</small></span>
+         </a>
+
+        </div>
+
+        <div class="footer">
+
+            © 2026 Designed & Developed by
+
+            <a href="https://www.tiktok.com/@nothphade" target="_blank">
+                NotPhade
+            </a>
+
+        </div>
+
+    </div>
 
 </div>
 
 </body>
+
