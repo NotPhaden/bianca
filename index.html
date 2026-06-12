@@ -1,596 +1,117 @@
+
 <head>
-    <link rel="icon" type="image/png" href="avatar.png">
+<link rel="icon" type="image/png" href="logo.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BIANCA  </title>
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-html,body{
-    width:100%;
-    min-height:100vh;
-    overflow-x:hidden;
-    background:#050505;
-}
-
-body{
-    color:white;
-    background:
-    linear-gradient(rgba(0,0,0,.18),rgba(0,0,0,.52)),
-    url("main-bg-pc.png");
-    background-size:cover;
-    background-position:center center;
-    background-repeat:no-repeat;
-    background-attachment:fixed;
-}
-
-.main{
-    width:100%;
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:30px 15px;
-}
-
-.card{
-    position:relative;
-    width:100%;
-    max-width:520px;
-    padding:78px 42px 34px;
-    border-radius:28px;
-    text-align:center;
-    background:
-        radial-gradient(circle at top, rgba(214,168,79,.10), transparent 34%),
-        linear-gradient(180deg, rgba(10,12,14,.78), rgba(0,0,0,.58));
-    border:1px solid hwb(310 1% 77% / 0.55);
-    box-shadow:
-        0 0 0 1px rgba(255,255,255,.06) inset,
-        0 0 36px #4e003038,
-        0 25px 80px rgba(0,0,0,.80);
-    backdrop-filter:blur(7px);
-    -webkit-backdrop-filter:blur(7px);
-    overflow:visible;
-}
-
-.card::before,
-.card::after{
-    content:"";
-    position:absolute;
-    left:50%;
-    transform:translateX(-50%);
-    width:58%;
-    height:1px;
-    background:linear-gradient(90deg, transparent, rgba(73, 1, 61, 0.95), transparent);
-    box-shadow:0 0 12px rgba(49, 0, 39, 0.85);
-}
-
-.card::before{ top:-1px; }
-.card::after{ bottom:-1px; }
-
-.logo{
-    position:absolute;
-    top:-48px;
-    left:50%;
-    transform:translateX(-50%);
-    width:112px;
-    height:112px;
-    margin:0;
-    border-radius:50%;
-    overflow:hidden;
-    border:3px solid #35013211;
-    background:#050505;
-    box-shadow:
-        0 0 0 5px rgba(0,0,0,.62),
-        0 0 24px rgba(80, 1, 67, 0.85),
-        0 0 50px #a855f7;
-}
-
-.logo::before{
-    content:"♛";
-    position:absolute;
-    top:-17px;
-    left:50%;
-    transform:translateX(-50%);
-    color:#a855f7;
-    font-size:20px;
-    text-shadow:0 0 10px #a855f7;
-    z-index:2;
-}
-
-.logo img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-h1{
-    font-size:56px;
-    line-height:.95;
-    letter-spacing:7px;
-    margin-bottom:14px;
-    color:white;
-    text-shadow:
-        0 2px 0 rgba(0,0,0,.75),
-        0 0 22px rgba(0,0,0,.95);
-}
-
-h1 span{
-    display:block;
-    margin-top:6px;
-    font-size:38px;
-    color:#a855f7;
-    letter-spacing:12px;
-    text-shadow:
-        0 0 16px #a855f7,
-        0 2px 0 rgba(0,0,0,.85);
-}
-
-.subtitle{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:14px;
-    color:#a855f7;
-    font-size:15px;
-    font-weight:bold;
-    letter-spacing:7px;
-    text-transform:uppercase;
-    margin-bottom:28px;
-    text-shadow:0 0 10px rgba(0,0,0,.95);
-}
-
-.subtitle::before,
-.subtitle::after{
-    content:"";
-    width:58px;
-    height:1px;
-    background:linear-gradient(90deg, transparent, #a855f7);
-}
-
-.subtitle::after{
-    background:linear-gradient(90deg, #a855f7, transparent);
-}
-
-.info-box{
-    margin:18px 0 24px;
-    display:grid;
-    gap:7px;
-    text-align:left;
-}
-
-.info-box div{
-    display:grid;
-    grid-template-columns:32px 1fr 1fr;
-    align-items:center;
-    gap:12px;
-    min-height:43px;
-    padding:10px 14px;
-    border-radius:8px;
-    background:linear-gradient(180deg, rgba(255,255,255,.055), rgba(0,0,0,.25));
-    border:1px solid rgba(255,255,255,.13);
-    box-shadow:0 0 14px rgba(0,0,0,.28) inset;
-}
-
-.info-box div::before{
-    font-size:20px;
-    color:#a855f7;
-    text-align:center;
-    filter:drop-shadow(0 0 5px #a855f7);
-}
-
-.info-box div:nth-child(1)::before{ content:"▦"; }
-.info-box div:nth-child(2)::before{ content:"▣"; }
-.info-box div:nth-child(3)::before{ content:"◆"; }
-.info-box div:nth-child(4)::before{ content:"♛"; }
-
-.info-box strong{
-    color:#a855f7;
-    font-size:14px;
-    letter-spacing:1.5px;
-    text-transform:uppercase;
-    text-shadow:0 0 8px #a855f7;
-}
-
-.info-box span{
-    color:#ffffff;
-    font-size:15px;
-    text-align:right;
-    text-shadow:0 0 8px rgba(0,0,0,.95);
-}
-
-.section-title{
-    position:relative;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:13px;
-    margin:20px 0 16px;
-    font-size:14px;
-    letter-spacing:4px;
-    color:#f1f1f1;
-    text-transform:uppercase;
-    text-shadow:0 0 10px rgba(0,0,0,.95);
-}
-
-.section-title::before,
-.section-title::after{
-    content:"";
-    width:34px;
-    height:1px;
-    background:#a855f7;
-    box-shadow:0 0 9px #a855f7;
-}
-
-.links-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:14px;
-}
-
-.btn{
-    position:relative;
-    min-height:70px;
-    display:flex;
-    align-items:center;
-    justify-content:flex-start;
-    gap:13px;
-    padding:14px 16px;
-    border-radius:9px;
-    text-decoration:none;
-    color:white;
-    background:linear-gradient(180deg, rgba(255,255,255,.055), rgba(0,0,0,.30));
-    border:1px solid rgba(255,255,255,.16);
-    box-shadow:
-        0 0 0 1px rgba(255,255,255,.04) inset,
-        0 12px 22px rgba(0,0,0,.34);
-    overflow:hidden;
-    transition:.25s ease;
-}
-
-.btn::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(90deg, transparent, rgba(255,255,255,.09), transparent);
-    transform:translateX(-120%);
-    transition:.45s ease;
-}
-
-.btn:hover{
-    transform:translateY(-3px) scale(1.015);
-}
-
-.btn:hover::after{
-    transform:translateX(120%);
-}
-
-.btn img{
-    width:34px;
-    height:34px;
-    object-fit:contain;
-    flex:0 0 auto;
-    filter:drop-shadow(0 0 8px rgba(255,255,255,.20));
-}
-
-.btn span{
-    display:flex;
-    flex-direction:column;
-    align-items:flex-start;
-    line-height:1.05;
-    font-size:20px;
-    font-weight:900;
-    letter-spacing:1px;
-    text-transform:uppercase;
-}
-
-.btn small{
-    margin-top:5px;
-    font-size:9px;
-    letter-spacing:1px;
-    color:rgba(255,255,255,.72);
-    font-weight:700;
-}
-
-.btn.discord{ border-color:rgba(110,120,255,.72); box-shadow:0 0 18px rgba(88,101,242,.23); }
-.btn.tiktok{ border-color:rgba(0,245,255,.68); box-shadow:0 0 18px rgba(0,245,255,.18); }
-.btn.youtube{ border-color:rgba(255,55,55,.68); box-shadow:0 0 18px rgba(255,55,55,.18); }
-.btn.donate{ border-color:rgba(214,168,79,.72); box-shadow:0 0 18px rgba(214,168,79,.20); }
-
-.footer{
-    margin-top:26px;
-    color:#ddd;
-    font-size:13px;
-    text-shadow:0 0 10px rgba(0,0,0,.9);
-}
-
-.footer a{
-    color:#d6a84f;
-    text-decoration:none;
-    font-weight:bold;
-    transition:.25s;
-}
-
-.footer a:hover{
-    color:white;
-    text-shadow:0 0 10px #a855f7;
-}
-
-@media(max-width:900px){
-
-    html,body{
-        width:100%;
-        height:100%;
-        min-height:100svh;
-        overflow:hidden;
-    }
-
-    body{
-        background:
-        linear-gradient(rgba(0,0,0,.10),rgba(0,0,0,.30)),
-        url("main-bg-mobile.png");
-
-        background-size:100% auto;
-        background-position:center top;
-        background-repeat:no-repeat;
-        background-attachment:scroll;
-    }
-
-    .main{
-        min-height:100svh;
-        align-items:flex-start;
-        justify-content:center;
-        padding:24px 8px 0;
-    }
-
-    .card{
-    width:92%;
-    max-width:350px;
-    padding:30px 12px 8px;
-    border-radius:28px;
-
-    transform:scale(1.1);
-    transform-origin:top center;
-    margin-top:0;
-
-    background:
-        radial-gradient(circle at top, rgba(214,168,79,.10), transparent 34%),
-        linear-gradient(180deg, rgba(10,12,14,.78), rgba(0,0,0,.58));
-
-    border:1px solid #a855f7;
-
-    box-shadow:
-        0 0 0 1px rgba(255,255,255,.06) inset,
-        0 0 36px rgba(214,168,79,.22),
-        0 25px 80px rgba(0,0,0,.80);
-
-    backdrop-filter:blur(7px);
-    -webkit-backdrop-filter:blur(7px);
-
-    overflow:visible;
-}
-
-    .logo{
-        width:54px;
-        height:54px;
-        top:-25px;
-        border-width:2px;
-        box-shadow:
-            0 0 0 3px rgba(0,0,0,.55),
-            0 0 14px #a855f7;
-    }
-
-    .logo::before{
-        top:-13px;
-        font-size:15px;
-    }
-
-    h1{
-        font-size:22px;
-        letter-spacing:2px;
-        margin-bottom:5px;
-    }
-
-    h1 span{
-        font-size:14px;
-        letter-spacing:4px;
-        margin-top:2px;
-    }
-
-    .subtitle{
-        font-size:7px;
-        letter-spacing:2px;
-        gap:5px;
-        margin-bottom:8px;
-    }
-
-    .subtitle::before,
-    .subtitle::after{
-        width:18px;
-    }
-
-    .info-box{
-        margin:6px 0 8px;
-        gap:3px;
-    }
-
-    .info-box div{
-        grid-template-columns:16px 1fr 1fr;
-        min-height:24px;
-        gap:5px;
-        padding:4px 7px;
-        border-radius:6px;
-    }
-
-    .info-box div::before{
-        font-size:10px;
-    }
-
-    .info-box strong{
-        font-size:7px;
-        letter-spacing:.3px;
-    }
-
-    .info-box span{
-        font-size:8px;
-    }
-
-    .section-title{
-        font-size:7px;
-        letter-spacing:1px;
-        gap:5px;
-        margin:7px 0 6px;
-        line-height:1.1;
-    }
-
-    .section-title::before,
-    .section-title::after{
-        width:12px;
-    }
-
-    .links-grid{
-        grid-template-columns:1fr 1fr;
-        gap:5px;
-    }
-
-    .btn{
-        min-height:33px;
-        gap:5px;
-        padding:5px 6px;
-        border-radius:6px;
-    }
-
-    .btn img{
-        width:16px;
-        height:16px;
-    }
-
-    .btn span{
-        font-size:8px;
-        letter-spacing:.2px;
-    }
-
-    .btn small{
-        margin-top:1px;
-        font-size:4px;
-        letter-spacing:.2px;
-    }
-
-    .footer{
-        margin-top:6px;
-        font-size:6px;
-    }
-}
-
-@media(max-width:360px){
-
-    .main{
-        padding-top:20px;
-    }
-
-    .card{
-        max-width:330px;
-        transform:scale(.68);
-        transform-origin:top center;
-    }
-}
-
-</style>
+<title>HYPERTOON</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="main">
+<header>
+    <img src="logo.png" alt="HYPERTOON" class="logo">
+</header>
 
-    <div class="card">
+<section class="episodes-section">
 
-        <div class="logo">
-            <img src="avatar.png">
-        </div>
+<div class="episodes-grid">
 
-        <h1>BIANCA <span></span></h1>
-
-        <div class="subtitle">
-            Official Online Links
-        </div>
-
-        <div class="info-box">
-
-            <div>
-                <strong>Server:</strong>
-                <span>B-ZONE Romania</span>
-            </div>
-
-            <div>
-                <strong>Platformă:</strong>
-                <span>RageMP</span>
-            </div>
-
-            <div>
-                <strong>Discount Code:</strong>
-                <span>BIANCA</span>
-            </div>
-
-            <div>
-                <strong>Referral Code:</strong>
-                <span>30</span>
-            </div>
-
-        </div>
-
-        <div class="section-title">
-            Unde o puteți găsi pe BIANCA  online
-        </div>
-
-        <div class="links-grid">
-
-            <a class="btn discord" href="https://discord.com/invite/tvn63tChDA" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png">
-                <span>Discord <small>Join the community</small></span>
-            </a>
-
-            <a class="btn tiktok" href="https://www.tiktok.com/@biancarusnaciuc" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
-                <span>TikTok <small>Follow for more</small></span>
-            </a>
-
-            <a class="btn donate" href="https://www.tipeeestream.com/biancarusnaciuc/donation" target="_blank">
-                <img src="https://cdn.discordapp.com/attachments/1153942954650648657/1511043894522155088/image-removebg-preview.png?ex=6a1f04ca&is=6a1db34a&hm=0894385e89cf7f65ae99ca0ccc595be7f72a2fab1375a4b6abdd5f762efdec83&">
-                <span>Susținere <small>Support BIANCA </small></span>
-            </a>
-
-              <a class="btn revolut" href="https://revolut.me/biancarusnaciuc" target="_blank">
-             <img src="https://cdn-icons-png.flaticon.com/512/825/825454.png">
-              <span>Revolut <small>Support via Revolut</small></span>
-            </a>
-
-            <a class="btn instagram" href="https://www.instagram.com/rusnaciucbianca/" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
-         <span>Instagram <small>Follow on IG</small></span>
-         </a>
-
-        </div>
-
-        <div class="footer">
-
-            © 2026 Designed & Developed by
-
-            <a href="https://www.tiktok.com/@nothphade" target="_blank">
-                NotPhade
-            </a>
-
-        </div>
-
+    <!-- SOY LUNA -->
+    <div class="episode-card" onclick="openShow('soy')">
+        <img src="https://imgs.search.brave.com/SJMW1swBjjr3LlY8oY4jn6lRdvk6lkYTipCKvoo_n4A/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9leHRl/cm5hbC1wcmV2aWV3/LnJlZGQuaXQvc295/LWx1bmEtMjAxNi1k/dWJsYXQtaW4tcm9t/YW5hLW9ubGluZS12/MC1aWll0Z0huVWc3/YWVTVDBBcmhXUlJB/UVdwSlRzYkRNejZ4/NDJDLWNHVDBNLmpw/Zz9hdXRvPXdlYnAm/cz1kN2IwOTJkMTcz/OGQ0YmVkZDdjYmZi/OGYzNTgzYjUwZTdm/NDZmZDBl">
+        <div class="card-title">Soy Luna</div>
     </div>
+
+    <!-- SIMSALA GRIMM -->
+    <div class="episode-card" onclick="openShow('simsala')">
+        <img src="https://imgs.search.brave.com/o2mY6XGITmmI1GZdBv025L6uuB7HnlDul5F74YFhHe4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YXByb3h5LnR2dHJv/cGVzLm9yZy93aWR0/aC8xMjAwL2h0dHBz/Oi8vc3RhdGljLnR2/dHJvcGVzLm9yZy9w/bXdpa2kvcHViL2lt/YWdlcy9zaW1zYWxh/Z3JpbW0uanBn">
+        <div class="card-title">Simsala Grimm</div>
+    </div>
+
+    <!-- FLINTSTONES -->
+    <div class="episode-card" onclick="openShow('flint')">
+        <img src="https://imgs.search.brave.com/eRJqiN2fKTeQ4Z9uIKBCR2LfZ-DqDg4gkGGixC-AJsE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/ZG96YWFuaW1hdGEu/bmV0L3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDIwLzExL0ZhbWls/aWEtRmxpbnRzdG9u/ZS5qcGc">
+        <div class="card-title">Flintstones</div>
+    </div>
+
+    <!-- PRINȚESA BALERINĂ -->
+    <div class="episode-card" onclick="openShow('printesa')">
+        <img src="https://image.tmdb.org/t/p/w342/uOTYMzTlXFbWDZCxxc0vX9CvBsl.jpg">
+        <div class="card-title">Prințesa Balerină</div>
+    </div>
+
+    <!-- CĂȚELUL BLOGGER -->
+    <div class="episode-card" onclick="openShow('catel')">
+        <img src="https://deseneledublate.com/wp-content/uploads/2018/06/catelul-blogger-sezonul-1-dublat-in-romana-200x300.png">
+        <div class="card-title">Cățelul Blogger</div>
+    </div>
+
+    <!-- BONA MEA ESTE UN VAMPIR -->
+    <div class="episode-card" onclick="openShow('bona')">
+        <img src="https://imgs.search.brave.com/8pdghbBbzUsGjLP3xy0UM69RahvYZ4CqTAqcmBFD-gM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/ZG96YWFuaW1hdGEu/bmV0L3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDIxLzAzLzI1MHB4/LU15QmFieXNpdHRl/cnNhVmFtcGlyZVBv/c3Rlci5wbmc">
+        <div class="card-title">Bona Mea Este Un Vampir</div>
+    </div>
+
+    <!-- TOM & JERRY -->
+    <div class="episode-card" onclick="openShow('tom')">
+        <img src="https://imgs.search.brave.com/8k7GigvhpSGhylaB34mPjdcySmnhRaam07NTwMOCpHM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXQuY29t/L3cvZnVsbC80LzUv/Yi8xMDY4OTI4LTE5/MjB4MTA4MC1kZXNr/dG9wLWZ1bGwtaGQt/dG9tLWFuZC1qZXJy/eS13YWxscGFwZXIu/anBn">
+        <div class="card-title">Tom & Jerry</div>
+    </div>
+
+    <!-- 16 DORINȚE -->
+    <div class="episode-card" onclick="openShow('dorinte')">
+        <img src="https://image.tmdb.org/t/p/w342/tO8TZvH83uHtrLnec6f684xfzOB.jpg">
+        <div class="card-title">16 Dorințe</div>
+    </div>
+
+    <!-- HOW TO BUILD A BETTER BOY -->
+    <div class="episode-card" onclick="openShow('better')">
+        <img src="https://imgs.search.brave.com/0hxylwV90mjo5tAFoLp98G48yGvQAWJV1Snp4JXGVo4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMud2lraWEubm9j/b29raWUubmV0L2Rp/c25leS1zdXBwb3J0/L2ltYWdlcy9kL2Q5/L0hvd190b19CdWls/ZF9hX0JldHRlcl9C/b3kuanBnL3Jldmlz/aW9uL2xhdGVzdC9z/Y2FsZS10by13aWR0/aC1kb3duLzI2OD9j/Yj0yMDIwMTAwNDE2/NDE0MA">
+        <div class="card-title">Better Boy</div>
+    </div>
+
+    <!-- CAMP ROCK -->
+    <div class="episode-card" onclick="openShow('camp')">
+        <img src="https://image.tmdb.org/t/p/w342/7IXMqZnwccogptThay3togKIFWw.jpg">
+        <div class="card-title">Camp Rock</div>
+    </div>
+
+        <!-- Winnie the Pooh -->
+    <div class="episode-card" onclick="openShow('winniethepooh')">
+        <img src="https://cdn.shopify.com/s/files/1/0051/8845/2401/files/Y339402901DisneyWinnieThePoohStorybookCollection_WR_WR__Rounded.png?v=1724254599">
+        <div class="card-title">Winnie the Pooh</div>
+    </div>
+
+  
+        <!-- În căutarea lui Nemo -->
+    <div class="episode-card" onclick="openShow('nemo')">
+        <img src="https://imgs.search.brave.com/LH6i9e-jpGSDDQikcNAHhe1fvLmrNZkOhPAdH142pm0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzRkLzk3/LzZiLzRkOTc2Yjg3/YWNiYTZhYmM3M2My/NDdkNTI5MzAwODAy/LmpwZw">
+        <div class="card-title">În căutarea lui Nemo</div>
+    </div>
+
+      
+        <!-- Nicky, Ricki, Dicky și Dawn -->
+    <div class="episode-card" onclick="openShow('cvadrupleti')">
+        <img src="https://imgs.search.brave.com/5c0o9oKJKMLfQQKuhGHfHefLxXPCN6UFV47cZpU3IqE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/MTEteWVhcnMtYWdv/LXRvZGF5LW5pY2t5/LXJpY2t5LWRpY2t5/LWFuZC1kYXduLXBy/ZW1pZXJlZC1kaWQt/djAtYXV1NGtlaG9y/eG9mMS5qcGc_d2lk/dGg9NjQwJmNyb3A9/c21hcnQmYXV0bz13/ZWJwJnM9NzVhZWNk/ZjFjOTIyNTc1ZTg5/MDNmMzA3NjlhYzlm/ZGIzMGFkNGRlNw">
+        <div class="card-title">Nicky, Ricki, Dicky și Dawn</div>
+    </div>
+
+            <!-- Ratatouille -->
+    <div class="episode-card" onclick="openShow('ratatouille')">
+        <img src="https://imgs.search.brave.com/Kx00fiKvY1UwFdgSsVF4J_jOedynZmiTnxawGpE6tkc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMud2lraWEubm9j/b29raWUubmV0L2Rp/c25leS1tYXRlcmlh/bC9pbWFnZXMvYy9j/ZS9SYXRhdG91aWxs/ZS53ZWJwL3Jldmlz/aW9uL2xhdGVzdC9z/Y2FsZS10by13aWR0/aC1kb3duLzI2OD9j/Yj0yMDIyMDYxMDIx/MjcyMw">
+        <div class="card-title">Ratatouille</div>
+    </div>
+
 
 </div>
 
-</body>
+</section>
 
+<script>
+function openShow(id){
+    window.location.href = "player.html?id=" + id;
+}
+</script>
+
+</body>
